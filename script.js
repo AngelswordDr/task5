@@ -1,10 +1,5 @@
 let lastOperand = 0;
 let operation = null;
-let currentOperation = null;
-let sum = document.getElementById('btn_sum');
-let diff = document.getElementById('btn_diff');
-let div = document.getElementById('btn_div');
-let multiply = document.getElementById('btn_multiply');
 
 const inputWindow = document.getElementById('inputWindow');
 
@@ -48,7 +43,7 @@ document.getElementById('btn_0').addEventListener('click', function () {
     inputWindow.value += '0';
 });
 
-sum.addEventListener('click', function () {
+document.getElementById('btn_sum').addEventListener('click', function () {
     let value = parseInt(inputWindow.value);
     if (operation != null && operation != 'sum') {
         lastOperand = calc(lastOperand, operation, value);
@@ -64,7 +59,7 @@ sum.addEventListener('click', function () {
     value = '';
 });
 
-diff.addEventListener('click', function () {
+document.getElementById('btn_diff').addEventListener('click', function () {
     let value = parseInt(inputWindow.value);
     if (operation != null && operation != 'diff') {
         lastOperand = calc(lastOperand, operation, value);
@@ -80,7 +75,7 @@ diff.addEventListener('click', function () {
     value = '';
 });
 
-multiply.addEventListener('click', function () {
+document.getElementById('btn_multiply').addEventListener('click', function () {
     let value = parseInt(inputWindow.value);
     if (operation != null && operation != 'multiply') {
         lastOperand = calc(lastOperand, operation, value);
@@ -96,7 +91,7 @@ multiply.addEventListener('click', function () {
     value = '';
 });
 
-div.addEventListener('click', function () {
+document.getElementById('btn_div').addEventListener('click', function () {
     let value = parseInt(inputWindow.value);
     if (operation != null && operation != 'div') {
         lastOperand = calc(lastOperand, operation, value);
