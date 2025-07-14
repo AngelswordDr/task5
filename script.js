@@ -52,7 +52,6 @@ sum.addEventListener('click', function () {
     let value = parseInt(inputWindow.value);
     if (operation != null && operation != 'sum') {
         lastOperand = calc(lastOperand, operation, value);
-        console.log(lastOperand);
     } else {
         if (operation != null){
             lastOperand = lastOperand + value;
@@ -69,7 +68,6 @@ diff.addEventListener('click', function () {
     let value = parseInt(inputWindow.value);
     if (operation != null && operation != 'diff') {
         lastOperand = calc(lastOperand, operation, value);
-        console.log(lastOperand);
     } else { 
         if (operation != null){
             lastOperand = lastOperand - value;
@@ -86,7 +84,6 @@ multiply.addEventListener('click', function () {
     let value = parseInt(inputWindow.value);
     if (operation != null && operation != 'multiply') {
         lastOperand = calc(lastOperand, operation, value);
-        console.log(lastOperand);
     } else {
         if (operation != null) {
             lastOperand = lastOperand * value;
@@ -103,7 +100,6 @@ div.addEventListener('click', function () {
     let value = parseInt(inputWindow.value);
     if (operation != null && operation != 'div') {
         lastOperand = calc(lastOperand, operation, value);
-        console.log(lastOperand);
     } else {
         if (operation != null){
             lastOperand = lastOperand / value;
@@ -156,21 +152,20 @@ document.getElementById('btn_clr').addEventListener('click', function () {
 });
 
 function calc (lastOperand, operation, value) {
-    if (operation === 'sum'){
-        lastOperand = lastOperand + value;
-        return lastOperand;
+    switch (operation) {
+        case 'sum':
+            lastOperand = lastOperand + value;
+            break;
+        case 'diff':
+            lastOperand = lastOperand - value;
+            break;
+        case 'multiply':
+            lastOperand = lastOperand * value;
+            break;
+        case 'div':
+            lastOperand = lastOperand / value;
+            break;
     }
-    if (operation === 'diff'){
-        lastOperand = lastOperand - value;
-        return lastOperand;
-    }
-    if (operation === 'multiply'){
-        lastOperand = lastOperand * value;
-        return lastOperand;
-    }
-    if (operation === 'div'){
-        lastOperand = lastOperand / value;
-        return lastOperand;
-    }
+    return lastOperand;
 }
 
